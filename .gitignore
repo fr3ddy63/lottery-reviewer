@@ -1,0 +1,5 @@
+/__pycache__
+/.vscode
+/eurojackpot/__pycache__
+/lotto/__pycache__
+/tickets/*
