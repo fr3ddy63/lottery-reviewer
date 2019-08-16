@@ -31,11 +31,19 @@ def evaluate(draw, ticket):
 def print_out(draw, ticket, common):
     print(f'Lotto - {draw["date"]}')
     print()
-    print(f'draw: {draw["numbers"]} - {draw["supernumber"]}')
+    print('draw: '
+          f'{draw["numbers"][0]:2d}, {draw["numbers"][1]:2d}, '
+          f'{draw["numbers"][2]:2d}, {draw["numbers"][3]:2d}, '
+          f'{draw["numbers"][4]:2d}, {draw["numbers"][5]:2d}')
+    print(f'supernumber: {draw["supernumber"]}')
     print()
     i = 0
     while i < len(ticket['games']):
-        print(f'{ticket["games"][i]} / {common["common"][i]}')
+        print(
+          f'{ticket["games"][i][0]:2d}, {ticket["games"][i][1]:2d}, '
+          f'{ticket["games"][i][2]:2d}, {ticket["games"][i][3]:2d}, '
+          f'{ticket["games"][i][4]:2d}, {ticket["games"][i][5]:2d} / '
+          f'{common["common"][i]}')
         i += 1
     print()
     print(f'ticket number: {ticket["ticket_number"]}')

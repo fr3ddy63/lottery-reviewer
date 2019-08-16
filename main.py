@@ -5,19 +5,22 @@ import lotto.draw
 import lotto.result
 import lotto.ticket
 
+# Lotto
+
+print('\n---Lotto----------------------------------\n')
 lotto_tickets = lotto.ticket.get()
-if not lotto_tickets:
-    pass
-else:
+if lotto_tickets:
     lotto_draw = lotto.draw.get()
     for lotto_ticket in lotto_tickets:
         lotto_result = lotto.result.evaluate(lotto_draw, lotto_ticket)
         lotto.result.print_out(lotto_draw, lotto_ticket, lotto_result)
+        print('\n------------------------------------------\n')
 
+# Eurojackpot
+
+print('\n---Eurojackpot----------------------------\n')
 eurojackpot_tickets = eurojackpot.ticket.get()
-if not eurojackpot_tickets:
-    pass
-else:
+if eurojackpot_tickets:
     eurojackpot_draw = eurojackpot.draw.get()
     for eurojackpot_ticket in eurojackpot_tickets:
         eurojackpot_result = eurojackpot.result.evaluate(
